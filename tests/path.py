@@ -142,7 +142,7 @@ class path(text_type):
         """
         f = open(self, mode='U', **kwargs)
         try:
-            return f.read()
+            return f.read().replace('\r\n', '\n')
         finally:
             f.close()
 
