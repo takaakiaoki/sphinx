@@ -401,7 +401,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         if len(codeblock) == 1:
             pass  # FIXME
         else:
-            ret.append('\\SetupFloatingEnvironment{literal-block}{name=%s}\n' %
+            ret.append('\\SetupFloatingEnvironment{LiteralBlock}{name=%s}\n' %
                        text_type(codeblock[0]).translate(tex_escape_map))
             if table[1]:
                 pass  # FIXME
@@ -1224,7 +1224,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         if self.in_container_literal_block:
             self.body.append('\\needspace{\\literalblockneedspace}')
             self.body.append('\\vspace{\\literalblockcaptiontopvspace}')
-            self.body.append('\\captionof{literal-block}{')
+            self.body.append('\\captionof{LiteralBlock}{')
             return
         self.body.append('\\caption{')
 
