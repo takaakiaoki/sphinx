@@ -527,12 +527,12 @@
 % Define literal-block environment
 \RequirePackage{newfloat}
 \DeclareFloatingEnvironment{literal-block}
+\SetupFloatingEnvironment{literal-block}{name=List,placement=h,fileext=loc}
 \ifx\thechapter\undefined
-  \SetupFloatingEnvironment{literal-block}{within=section,placement=h}
+  \SetupFloatingEnvironment{literal-block}{within=section}
 \else
-  \SetupFloatingEnvironment{literal-block}{within=chapter,placement=h}
+  \SetupFloatingEnvironment{literal-block}{within=chapter}
 \fi
-\SetupFloatingEnvironment{literal-block}{name=List}
 % control caption around literal-block
 \RequirePackage{capt-of}
 \RequirePackage{needspace}
