@@ -10,7 +10,7 @@
 import os
 import sys
 import shutil
-from codecs import open
+from io import open
 
 from six import PY2, text_type
 
@@ -140,7 +140,7 @@ class path(text_type):
         """
         Returns the text in the file.
         """
-        f = open(self, mode='U', **kwargs)
+        f = open(self, mode='rU', **kwargs)
         try:
             return f.read()
         finally:
